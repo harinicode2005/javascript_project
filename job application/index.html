@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application Tracker</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>JobTracker</span>
+        </div>
+
+        <nav class="nav">
+            <a href="#">Dashboard</a>
+            <a href="#">Applications</a>
+            <a href="#">Analytics</a>
+        </nav>
+
+        <button class="theme-btn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </header>
+
+    <!-- MAIN -->
+    <main class="container">
+
+        <!-- DASHBOARD -->
+        <section class="dashboard">
+            <div class="card">
+                <h3>Total Applications</h3>
+                <p id="totalApps">0</p>
+            </div>
+            <div class="card">
+                <h3>Interviews</h3>
+                <p id="interviews">0</p>
+            </div>
+            <div class="card">
+                <h3>Offers</h3>
+                <p id="offers">0</p>
+            </div>
+            <div class="card">
+                <h3>Rejected</h3>
+                <p id="rejected">0</p>
+            </div>
+        </section>
+
+        <!-- ADD JOB FORM -->
+        <section class="form-section">
+            <h2>Add Job Application</h2>
+
+            <form id="jobForm">
+                <div class="form-group">
+                    <input type="text" id="company" placeholder="Company Name" required>
+                    <input type="text" id="role" placeholder="Job Role" required>
+                </div>
+
+                <div class="form-group">
+                    <select id="status">
+                        <option value="Applied">Applied</option>
+                        <option value="Interview">Interview</option>
+                        <option value="Offer">Offer</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+
+                    <input type="date" id="followUp">
+                </div>
+
+                <textarea id="notes" placeholder="Notes (HR call, interview feedback...)"></textarea>
+
+                <button type="submit" class="primary-btn">
+                    <i class="fa-solid fa-plus"></i> Add Application
+                </button>
+            </form>
+        </section>
+
+        <!-- FILTER & SEARCH -->
+        <section class="filter-section">
+            <input type="text" id="search" placeholder="Search by company or role">
+
+            <select id="filterStatus">
+                <option value="All">All Status</option>
+                <option value="Applied">Applied</option>
+                <option value="Interview">Interview</option>
+                <option value="Offer">Offer</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+        </section>
+
+        <!-- JOB LIST -->
+        <section class="table-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Follow-up</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="jobList">
+                    <!-- Dynamic rows from JS -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 JobTracker. Built with JavaScript.</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="app.js"></script>
+</body>
+</html>
